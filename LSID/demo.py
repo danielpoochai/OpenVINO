@@ -124,11 +124,8 @@ def main():
         model = LSID.lsid(inchannel=9, block_size=3)
     else: # Sony
         model = LSID.lsid(inchannel=4, block_size=2)
-        print('fuck')
-        for name, module in model.named_modules():
-            print(name, module)
-        print('fuckfuck')
-    # print(model)
+
+    print(model)
 
     start_epoch = 0
     start_iteration = 0

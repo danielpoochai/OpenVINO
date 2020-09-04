@@ -85,6 +85,7 @@ class Trainer(object):
         self.model.eval()
 
         end = time.time()
+        print(len(self.val_loader))
         for batch_idx, (raws, imgs, targets, img_files, img_exposures, lbl_exposures, ratios) in tqdm.tqdm(
                 enumerate(self.val_loader), total=len(self.val_loader),
                 desc='{} iteration={} epoch={}'.format('Valid' if self.cmd == 'train' else 'Test',
@@ -272,7 +273,6 @@ class Trainer(object):
 
     def train(self):
         max_epoch = int(math.ceil(1. * self.max_iter / len(self.train_loader)))
-        print(len(self.train_loader))
         for epoch in tqdm.trange(self.epoch, max_epoch, desc='Train', ncols=80):
             self.epoch = epoch
             self.train_epoch()
