@@ -23,15 +23,16 @@ import utils
 import tqdm
 import scipy.io 
 
-ABSPATH = "/Users/daniel/Desktop/IntelFPGA/Learning_to_See_in_the_Dark_PyTorch/"
+ABSPATH = "C:/Users/lab_phdi/Desktop/OpenVINO/LSID/"
 
 cuda = torch.cuda.is_available()
 kwargs = {'num_workers': args.workers, 'pin_memory': True} if cuda else {}
 
 #test dataloader
 dataset_class = datasets.__dict__["Sony"]
-dt = dataset_class("./dataset/", './dataset/Sony_test_list.txt', split='test', gt_png=True, use_camera_wb=True, upper=-1)
+dt = dataset_class("./dataset", './dataset/Sony_test_list.txt', split='test', gt_png=True, use_camera_wb=True, upper=-1)
 test_loader = torch.utils.data.DataLoader(dt, batch_size=1, shuffle=False, **kwargs)
+print(len(test_loader))
 # dt = dataset_class("./Sony", "./Sony/Sony_test_list.txt", split='test')
 # test_loader = torch.utils.data.DataLoader(dt, 1, shuffle=False, **kwargs)
 
@@ -44,9 +45,9 @@ class OriginalInference:
 		self.epoch = 0
 		self.val_loader = test_loader
 		self.cmd = 'Test'
-		self.result_dir = '/Users/daniel/Desktop/IntelFPGA/Learning_to_See_in_the_Dark_PyTorch/result_orig'
+		self.result_dir = 'C:/Users/lab_phdi/Desktop/OpenVINO/LSID'
 
-		self.exec_net = self.net.load_state_dict(torch.load("./checkpoint/Sony/checkpoint.pth.tar")['model_state_dict'])
+		self.exec_net = self.net.load_state_dict(torch.load("./checkpoint/Sony/checkpoint-99.pth.tar", map_location=torch.device('cpu'))['model_state_dict'])
 
 	def run(self):
 		batch_time = utils.AverageMeter()
@@ -90,20 +91,23 @@ class OriginalInference:
 
 class InferenceEngineOpenVINO:
 	def __init__(self):
-		from openvino.inference_engine import IENetwork, IEPlugin 
-		xmlfile = ABSPATH + "Sony_resume_test.xml"
+		from openvino.inference_engine import IENetwork, IECore, IEPlugin
+		ie = IECore() #IE instance
+		xmlfile = ABSPATH + "Sony_resume_test.xml" 
 		binfile = ABSPATH + "Sony_resume_test.bin"
-		self.net = IENetwork(model=xmlfile, weights=binfile)
+		# self.net = IENetwork(model=xmlfile, weights=binfile) #Read OR model
+		self.net = ie.read_network(model=xmlfile, weights=binfile)
 		self.criterion = nn.L1Loss()
 
 		self.iteration = 0 
 		self.epoch = 0
 
-		self.result_dir = '/Users/daniel/Desktop/IntelFPGA/Learning_to_See_in_the_Dark_PyTorch/result'
-		
-		self.plugin = IEPlugin(device="CPU")
+		self.result_dir = 'C:/Users/lab_phdi/Desktop/OpenVINO/LSID/'
+
+		# self.plugin = IEPlugin(device="CPU")
 		#self.plugin = IEPlugin(device="GPU")  if you have intel GPU not nvidia  
-		self.exec_net = self.plugin.load(network=self.net)
+		self.exec_net = ie.load_network(network = self.net, device_name="CPU")
+		# self.exec_net = IEPlugin.load(network=self.net, config={"DEVICE_ID":"0"})
 		self.input_blob = next(iter(self.net.inputs))
 		self.output_blob = next(iter(self.net.outputs))
 
@@ -232,16 +236,4 @@ if __name__ == "__main__":
 	# if sys.argv[1] == "--inferOpenCV":
 	# 	InferenceEngineOpenCV.inferFromFileName(sys.argv[2])
 
-	OriginalInference().run()
-
-
-
-
-
-
-
-
-
-
-
-
+	# OriginalInference().run()

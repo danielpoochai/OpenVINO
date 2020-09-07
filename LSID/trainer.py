@@ -108,7 +108,8 @@ class Trainer(object):
                     # check val acc of the ONNX model
                     onnx_inputs = {'in': to_numpy(raws)}
                     output = self.onnx_session.run(None, onnx_inputs)[0]
-                    output = torch.tensor(output).cuda()
+                    # output = torch.tensor(output).cuda()
+                    output = torch.tensor(output)
 
                     targets = targets[:, :, :output.size(2), :output.size(3)]
                     loss = self.criterion(output, targets)
