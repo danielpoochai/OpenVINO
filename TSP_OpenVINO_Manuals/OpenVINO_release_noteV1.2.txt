@@ -1,0 +1,18 @@
+Sinse 2020.04, The OSK board is change name to TSP. So the file or folder name contained "OSK" will be changed to "TSP". 
+
+Terasic has released two version of OpenVINO support packages:
+2019R1 (support C++ & python)
+2018R2 (only support C++)
+
+
+The Terasic TSP Board Package differences:
+
+2019R1 FPGA bitstream（for both GT&GX devices） :
+1. 8x16_clamp arch
+2. 8x8_norm arch
+
+2018R2 FPGA bitstream（for GX device）:  
+4x4 arch
+
+
+For more detail informations of the difference between the two versions,please see the release note of OpenVINO toolkit(https://software.intel.com/en-us/articles/OpenVINO-RelNotes) directly. 
