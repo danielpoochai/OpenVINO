@@ -99,9 +99,10 @@ class Trainer(object):
             with torch.no_grad():
                 if self.onnx_session is None:
                     raws = Variable(raws)
-                    # print(raws.shape)
+                    print(raws.shape)
                     targets = Variable(targets)
                     output = self.model(raws)
+                    print(output.shape)
                     loss = self.criterion(output, targets)
                     print(loss.item())
                 else:
