@@ -2,9 +2,9 @@
 <net name="Sony_resume_test" version="10">
 	<layers>
 		<layer id="0" name="in" type="Parameter" version="opset1">
-			<data element_type="f32" shape="1,4,1424,2128"/>
+			<data element_type="f16" shape="1,4,1424,2128"/>
 			<output>
-				<port id="0" precision="FP32">
+				<port id="0" precision="FP16">
 					<dim>1</dim>
 					<dim>4</dim>
 					<dim>1424</dim>
@@ -13,9 +13,9 @@
 			</output>
 		</layer>
 		<layer id="1" name="onnx_initializer_node_conv1_1.weight/Output_0/Data__const" type="Const" version="opset1">
-			<data element_type="f32" offset="0" shape="32,4,3,3" size="4608"/>
+			<data element_type="f16" offset="0" shape="32,4,3,3" size="2304"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>32</dim>
 					<dim>4</dim>
 					<dim>3</dim>
@@ -40,7 +40,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>32</dim>
 					<dim>1424</dim>
@@ -48,10 +48,10 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="3" name="43/Dims1681/copy_const" type="Const" version="opset1">
-			<data element_type="f32" offset="4608" shape="1,32,1,1" size="128"/>
+		<layer id="3" name="43/Dims1741/copy_const" type="Const" version="opset1">
+			<data element_type="f16" offset="2304" shape="1,32,1,1" size="64"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>1</dim>
 					<dim>32</dim>
 					<dim>1</dim>
@@ -75,7 +75,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>32</dim>
 					<dim>1424</dim>
@@ -83,15 +83,15 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="5" name="443485/Cast_14424_const" type="Const" version="opset1">
-			<data element_type="f32" offset="4736" shape="1" size="4"/>
+		<layer id="5" name="443465/Cast_14408_const" type="Const" version="opset1">
+			<data element_type="f32" offset="2368" shape="1" size="4"/>
 			<output>
 				<port id="1" precision="FP32">
 					<dim>1</dim>
 				</port>
 			</output>
 		</layer>
-		<layer id="6" name="443485" type="PReLU" version="opset1">
+		<layer id="6" name="443465" type="PReLU" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -104,7 +104,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>32</dim>
 					<dim>1424</dim>
@@ -113,9 +113,9 @@
 			</output>
 		</layer>
 		<layer id="7" name="onnx_initializer_node_conv1_2.weight/Output_0/Data__const" type="Const" version="opset1">
-			<data element_type="f32" offset="4740" shape="32,32,3,3" size="36864"/>
+			<data element_type="f16" offset="2372" shape="32,32,3,3" size="18432"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>32</dim>
 					<dim>32</dim>
 					<dim>3</dim>
@@ -140,7 +140,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>32</dim>
 					<dim>1424</dim>
@@ -148,10 +148,10 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="9" name="45/Dims1723/copy_const" type="Const" version="opset1">
-			<data element_type="f32" offset="41604" shape="1,32,1,1" size="128"/>
+		<layer id="9" name="45/Dims1735/copy_const" type="Const" version="opset1">
+			<data element_type="f16" offset="20804" shape="1,32,1,1" size="64"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>1</dim>
 					<dim>32</dim>
 					<dim>1</dim>
@@ -175,7 +175,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>32</dim>
 					<dim>1424</dim>
@@ -183,15 +183,15 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="11" name="463433/Cast_14428_const" type="Const" version="opset1">
-			<data element_type="f32" offset="4736" shape="1" size="4"/>
+		<layer id="11" name="463449/Cast_14388_const" type="Const" version="opset1">
+			<data element_type="f32" offset="2368" shape="1" size="4"/>
 			<output>
 				<port id="1" precision="FP32">
 					<dim>1</dim>
 				</port>
 			</output>
 		</layer>
-		<layer id="12" name="463433" type="PReLU" version="opset1">
+		<layer id="12" name="463449" type="PReLU" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -204,7 +204,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>32</dim>
 					<dim>1424</dim>
@@ -223,7 +223,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>1</dim>
 					<dim>32</dim>
 					<dim>712</dim>
@@ -232,9 +232,9 @@
 			</output>
 		</layer>
 		<layer id="14" name="onnx_initializer_node_conv2_1.weight/Output_0/Data__const" type="Const" version="opset1">
-			<data element_type="f32" offset="41732" shape="64,32,3,3" size="73728"/>
+			<data element_type="f16" offset="20868" shape="64,32,3,3" size="36864"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>64</dim>
 					<dim>32</dim>
 					<dim>3</dim>
@@ -259,7 +259,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>64</dim>
 					<dim>712</dim>
@@ -267,10 +267,10 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="16" name="48/Dims1675/copy_const" type="Const" version="opset1">
-			<data element_type="f32" offset="115460" shape="1,64,1,1" size="256"/>
+		<layer id="16" name="48/Dims1711/copy_const" type="Const" version="opset1">
+			<data element_type="f16" offset="57732" shape="1,64,1,1" size="128"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>1</dim>
 					<dim>64</dim>
 					<dim>1</dim>
@@ -294,7 +294,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>64</dim>
 					<dim>712</dim>
@@ -302,15 +302,15 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="18" name="493421/Cast_14394_const" type="Const" version="opset1">
-			<data element_type="f32" offset="4736" shape="1" size="4"/>
+		<layer id="18" name="493461/Cast_14390_const" type="Const" version="opset1">
+			<data element_type="f32" offset="2368" shape="1" size="4"/>
 			<output>
 				<port id="1" precision="FP32">
 					<dim>1</dim>
 				</port>
 			</output>
 		</layer>
-		<layer id="19" name="493421" type="PReLU" version="opset1">
+		<layer id="19" name="493461" type="PReLU" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -323,7 +323,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>64</dim>
 					<dim>712</dim>
@@ -332,9 +332,9 @@
 			</output>
 		</layer>
 		<layer id="20" name="onnx_initializer_node_conv2_2.weight/Output_0/Data__const" type="Const" version="opset1">
-			<data element_type="f32" offset="115716" shape="64,64,3,3" size="147456"/>
+			<data element_type="f16" offset="57860" shape="64,64,3,3" size="73728"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>64</dim>
 					<dim>64</dim>
 					<dim>3</dim>
@@ -359,7 +359,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>64</dim>
 					<dim>712</dim>
@@ -367,10 +367,10 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="22" name="50/Dims1687/copy_const" type="Const" version="opset1">
-			<data element_type="f32" offset="263172" shape="1,64,1,1" size="256"/>
+		<layer id="22" name="50/Dims1669/copy_const" type="Const" version="opset1">
+			<data element_type="f16" offset="131588" shape="1,64,1,1" size="128"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>1</dim>
 					<dim>64</dim>
 					<dim>1</dim>
@@ -394,7 +394,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>64</dim>
 					<dim>712</dim>
@@ -402,15 +402,15 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="24" name="513437/Cast_14396_const" type="Const" version="opset1">
-			<data element_type="f32" offset="4736" shape="1" size="4"/>
+		<layer id="24" name="513453/Cast_14414_const" type="Const" version="opset1">
+			<data element_type="f32" offset="2368" shape="1" size="4"/>
 			<output>
 				<port id="1" precision="FP32">
 					<dim>1</dim>
 				</port>
 			</output>
 		</layer>
-		<layer id="25" name="513437" type="PReLU" version="opset1">
+		<layer id="25" name="513453" type="PReLU" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -423,7 +423,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>64</dim>
 					<dim>712</dim>
@@ -442,7 +442,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>1</dim>
 					<dim>64</dim>
 					<dim>356</dim>
@@ -451,9 +451,9 @@
 			</output>
 		</layer>
 		<layer id="27" name="onnx_initializer_node_conv3_1.weight/Output_0/Data__const" type="Const" version="opset1">
-			<data element_type="f32" offset="263428" shape="128,64,3,3" size="294912"/>
+			<data element_type="f16" offset="131716" shape="128,64,3,3" size="147456"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>128</dim>
 					<dim>64</dim>
 					<dim>3</dim>
@@ -478,7 +478,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>128</dim>
 					<dim>356</dim>
@@ -486,10 +486,10 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="29" name="53/Dims1741/copy_const" type="Const" version="opset1">
-			<data element_type="f32" offset="558340" shape="1,128,1,1" size="512"/>
+		<layer id="29" name="53/Dims1699/copy_const" type="Const" version="opset1">
+			<data element_type="f16" offset="279172" shape="1,128,1,1" size="256"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>1</dim>
 					<dim>128</dim>
 					<dim>1</dim>
@@ -513,7 +513,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>128</dim>
 					<dim>356</dim>
@@ -521,15 +521,15 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="31" name="543477/Cast_14400_const" type="Const" version="opset1">
-			<data element_type="f32" offset="4736" shape="1" size="4"/>
+		<layer id="31" name="543437/Cast_14428_const" type="Const" version="opset1">
+			<data element_type="f32" offset="2368" shape="1" size="4"/>
 			<output>
 				<port id="1" precision="FP32">
 					<dim>1</dim>
 				</port>
 			</output>
 		</layer>
-		<layer id="32" name="543477" type="PReLU" version="opset1">
+		<layer id="32" name="543437" type="PReLU" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -542,7 +542,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>128</dim>
 					<dim>356</dim>
@@ -551,9 +551,9 @@
 			</output>
 		</layer>
 		<layer id="33" name="onnx_initializer_node_conv3_2.weight/Output_0/Data__const" type="Const" version="opset1">
-			<data element_type="f32" offset="558852" shape="128,128,3,3" size="589824"/>
+			<data element_type="f16" offset="279428" shape="128,128,3,3" size="294912"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>128</dim>
 					<dim>128</dim>
 					<dim>3</dim>
@@ -578,7 +578,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>128</dim>
 					<dim>356</dim>
@@ -586,10 +586,10 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="35" name="55/Dims1747/copy_const" type="Const" version="opset1">
-			<data element_type="f32" offset="1148676" shape="1,128,1,1" size="512"/>
+		<layer id="35" name="55/Dims1729/copy_const" type="Const" version="opset1">
+			<data element_type="f16" offset="574340" shape="1,128,1,1" size="256"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>1</dim>
 					<dim>128</dim>
 					<dim>1</dim>
@@ -613,7 +613,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>128</dim>
 					<dim>356</dim>
@@ -621,15 +621,15 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="37" name="563425/Cast_14412_const" type="Const" version="opset1">
-			<data element_type="f32" offset="4736" shape="1" size="4"/>
+		<layer id="37" name="563469/Cast_14400_const" type="Const" version="opset1">
+			<data element_type="f32" offset="2368" shape="1" size="4"/>
 			<output>
 				<port id="1" precision="FP32">
 					<dim>1</dim>
 				</port>
 			</output>
 		</layer>
-		<layer id="38" name="563425" type="PReLU" version="opset1">
+		<layer id="38" name="563469" type="PReLU" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -642,7 +642,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>128</dim>
 					<dim>356</dim>
@@ -661,7 +661,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>1</dim>
 					<dim>128</dim>
 					<dim>178</dim>
@@ -670,9 +670,9 @@
 			</output>
 		</layer>
 		<layer id="40" name="onnx_initializer_node_conv4_1.weight/Output_0/Data__const" type="Const" version="opset1">
-			<data element_type="f32" offset="1149188" shape="256,128,3,3" size="1179648"/>
+			<data element_type="f16" offset="574596" shape="256,128,3,3" size="589824"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>256</dim>
 					<dim>128</dim>
 					<dim>3</dim>
@@ -697,7 +697,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>256</dim>
 					<dim>178</dim>
@@ -705,10 +705,10 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="42" name="58/Dims1693/copy_const" type="Const" version="opset1">
-			<data element_type="f32" offset="2328836" shape="1,256,1,1" size="1024"/>
+		<layer id="42" name="58/Dims1651/copy_const" type="Const" version="opset1">
+			<data element_type="f16" offset="1164420" shape="1,256,1,1" size="512"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>1</dim>
 					<dim>256</dim>
 					<dim>1</dim>
@@ -732,7 +732,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>256</dim>
 					<dim>178</dim>
@@ -740,15 +740,15 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="44" name="593441/Cast_14416_const" type="Const" version="opset1">
-			<data element_type="f32" offset="4736" shape="1" size="4"/>
+		<layer id="44" name="593421/Cast_14394_const" type="Const" version="opset1">
+			<data element_type="f32" offset="2368" shape="1" size="4"/>
 			<output>
 				<port id="1" precision="FP32">
 					<dim>1</dim>
 				</port>
 			</output>
 		</layer>
-		<layer id="45" name="593441" type="PReLU" version="opset1">
+		<layer id="45" name="593421" type="PReLU" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -761,7 +761,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>256</dim>
 					<dim>178</dim>
@@ -770,9 +770,9 @@
 			</output>
 		</layer>
 		<layer id="46" name="onnx_initializer_node_conv4_2.weight/Output_0/Data__const" type="Const" version="opset1">
-			<data element_type="f32" offset="2329860" shape="256,256,3,3" size="2359296"/>
+			<data element_type="f16" offset="1164932" shape="256,256,3,3" size="1179648"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>256</dim>
 					<dim>256</dim>
 					<dim>3</dim>
@@ -797,7 +797,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>256</dim>
 					<dim>178</dim>
@@ -805,10 +805,10 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="48" name="60/Dims1729/copy_const" type="Const" version="opset1">
-			<data element_type="f32" offset="4689156" shape="1,256,1,1" size="1024"/>
+		<layer id="48" name="60/Dims1663/copy_const" type="Const" version="opset1">
+			<data element_type="f16" offset="2344580" shape="1,256,1,1" size="512"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>1</dim>
 					<dim>256</dim>
 					<dim>1</dim>
@@ -832,7 +832,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>256</dim>
 					<dim>178</dim>
@@ -840,15 +840,15 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="50" name="613429/Cast_14398_const" type="Const" version="opset1">
-			<data element_type="f32" offset="4736" shape="1" size="4"/>
+		<layer id="50" name="613441/Cast_14402_const" type="Const" version="opset1">
+			<data element_type="f32" offset="2368" shape="1" size="4"/>
 			<output>
 				<port id="1" precision="FP32">
 					<dim>1</dim>
 				</port>
 			</output>
 		</layer>
-		<layer id="51" name="613429" type="PReLU" version="opset1">
+		<layer id="51" name="613441" type="PReLU" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -861,7 +861,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>256</dim>
 					<dim>178</dim>
@@ -880,7 +880,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>1</dim>
 					<dim>256</dim>
 					<dim>89</dim>
@@ -889,9 +889,9 @@
 			</output>
 		</layer>
 		<layer id="53" name="onnx_initializer_node_conv5_1.weight/Output_0/Data__const" type="Const" version="opset1">
-			<data element_type="f32" offset="4690180" shape="512,256,3,3" size="4718592"/>
+			<data element_type="f16" offset="2345092" shape="512,256,3,3" size="2359296"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>512</dim>
 					<dim>256</dim>
 					<dim>3</dim>
@@ -916,7 +916,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>512</dim>
 					<dim>89</dim>
@@ -924,10 +924,10 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="55" name="63/Dims1735/copy_const" type="Const" version="opset1">
-			<data element_type="f32" offset="9408772" shape="1,512,1,1" size="2048"/>
+		<layer id="55" name="63/Dims1753/copy_const" type="Const" version="opset1">
+			<data element_type="f16" offset="4704388" shape="1,512,1,1" size="1024"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>1</dim>
 					<dim>512</dim>
 					<dim>1</dim>
@@ -951,7 +951,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>512</dim>
 					<dim>89</dim>
@@ -959,8 +959,8 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="57" name="643473/Cast_14414_const" type="Const" version="opset1">
-			<data element_type="f32" offset="4736" shape="1" size="4"/>
+		<layer id="57" name="643473/Cast_14424_const" type="Const" version="opset1">
+			<data element_type="f32" offset="2368" shape="1" size="4"/>
 			<output>
 				<port id="1" precision="FP32">
 					<dim>1</dim>
@@ -980,7 +980,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>512</dim>
 					<dim>89</dim>
@@ -989,9 +989,9 @@
 			</output>
 		</layer>
 		<layer id="59" name="onnx_initializer_node_conv5_2.weight/Output_0/Data__const" type="Const" version="opset1">
-			<data element_type="f32" offset="9410820" shape="512,512,3,3" size="9437184"/>
+			<data element_type="f16" offset="4705412" shape="512,512,3,3" size="4718592"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>512</dim>
 					<dim>512</dim>
 					<dim>3</dim>
@@ -1016,7 +1016,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>512</dim>
 					<dim>89</dim>
@@ -1024,10 +1024,10 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="61" name="65/Dims1657/copy_const" type="Const" version="opset1">
-			<data element_type="f32" offset="18848004" shape="1,512,1,1" size="2048"/>
+		<layer id="61" name="65/Dims1687/copy_const" type="Const" version="opset1">
+			<data element_type="f16" offset="9424004" shape="1,512,1,1" size="1024"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>1</dim>
 					<dim>512</dim>
 					<dim>1</dim>
@@ -1051,7 +1051,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>512</dim>
 					<dim>89</dim>
@@ -1059,15 +1059,15 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="63" name="663457/Cast_14406_const" type="Const" version="opset1">
-			<data element_type="f32" offset="4736" shape="1" size="4"/>
+		<layer id="63" name="663445/Cast_14416_const" type="Const" version="opset1">
+			<data element_type="f32" offset="2368" shape="1" size="4"/>
 			<output>
 				<port id="1" precision="FP32">
 					<dim>1</dim>
 				</port>
 			</output>
 		</layer>
-		<layer id="64" name="663457" type="PReLU" version="opset1">
+		<layer id="64" name="663445" type="PReLU" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -1080,7 +1080,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>512</dim>
 					<dim>89</dim>
@@ -1089,9 +1089,9 @@
 			</output>
 		</layer>
 		<layer id="65" name="onnx_initializer_node_up6.weight/Output_0/Data__const" type="Const" version="opset1">
-			<data element_type="f32" offset="18850052" shape="512,256,2,2" size="2097152"/>
+			<data element_type="f16" offset="9425028" shape="512,256,2,2" size="1048576"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>512</dim>
 					<dim>256</dim>
 					<dim>2</dim>
@@ -1116,7 +1116,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>256</dim>
 					<dim>178</dim>
@@ -1141,7 +1141,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>512</dim>
 					<dim>178</dim>
@@ -1150,9 +1150,9 @@
 			</output>
 		</layer>
 		<layer id="68" name="onnx_initializer_node_conv6_1.weight/Output_0/Data__const" type="Const" version="opset1">
-			<data element_type="f32" offset="20947204" shape="256,512,3,3" size="4718592"/>
+			<data element_type="f16" offset="10473604" shape="256,512,3,3" size="2359296"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>256</dim>
 					<dim>512</dim>
 					<dim>3</dim>
@@ -1177,7 +1177,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>256</dim>
 					<dim>178</dim>
@@ -1185,10 +1185,10 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="70" name="89/Dims1753/copy_const" type="Const" version="opset1">
-			<data element_type="f32" offset="25665796" shape="1,256,1,1" size="1024"/>
+		<layer id="70" name="89/Dims1717/copy_const" type="Const" version="opset1">
+			<data element_type="f16" offset="12832900" shape="1,256,1,1" size="512"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>1</dim>
 					<dim>256</dim>
 					<dim>1</dim>
@@ -1212,7 +1212,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>256</dim>
 					<dim>178</dim>
@@ -1220,15 +1220,15 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="72" name="903469/Cast_14410_const" type="Const" version="opset1">
-			<data element_type="f32" offset="4736" shape="1" size="4"/>
+		<layer id="72" name="903457/Cast_14392_const" type="Const" version="opset1">
+			<data element_type="f32" offset="2368" shape="1" size="4"/>
 			<output>
 				<port id="1" precision="FP32">
 					<dim>1</dim>
 				</port>
 			</output>
 		</layer>
-		<layer id="73" name="903469" type="PReLU" version="opset1">
+		<layer id="73" name="903457" type="PReLU" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -1241,7 +1241,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>256</dim>
 					<dim>178</dim>
@@ -1250,9 +1250,9 @@
 			</output>
 		</layer>
 		<layer id="74" name="onnx_initializer_node_conv6_2.weight/Output_0/Data__const" type="Const" version="opset1">
-			<data element_type="f32" offset="25666820" shape="256,256,3,3" size="2359296"/>
+			<data element_type="f16" offset="12833412" shape="256,256,3,3" size="1179648"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>256</dim>
 					<dim>256</dim>
 					<dim>3</dim>
@@ -1277,7 +1277,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>256</dim>
 					<dim>178</dim>
@@ -1285,10 +1285,10 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="76" name="91/Dims1651/copy_const" type="Const" version="opset1">
-			<data element_type="f32" offset="28026116" shape="1,256,1,1" size="1024"/>
+		<layer id="76" name="91/Dims1705/copy_const" type="Const" version="opset1">
+			<data element_type="f16" offset="14013060" shape="1,256,1,1" size="512"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>1</dim>
 					<dim>256</dim>
 					<dim>1</dim>
@@ -1312,7 +1312,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>256</dim>
 					<dim>178</dim>
@@ -1320,15 +1320,15 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="78" name="923465/Cast_14420_const" type="Const" version="opset1">
-			<data element_type="f32" offset="4736" shape="1" size="4"/>
+		<layer id="78" name="923485/Cast_14420_const" type="Const" version="opset1">
+			<data element_type="f32" offset="2368" shape="1" size="4"/>
 			<output>
 				<port id="1" precision="FP32">
 					<dim>1</dim>
 				</port>
 			</output>
 		</layer>
-		<layer id="79" name="923465" type="PReLU" version="opset1">
+		<layer id="79" name="923485" type="PReLU" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -1341,7 +1341,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>256</dim>
 					<dim>178</dim>
@@ -1350,9 +1350,9 @@
 			</output>
 		</layer>
 		<layer id="80" name="onnx_initializer_node_up7.weight/Output_0/Data__const" type="Const" version="opset1">
-			<data element_type="f32" offset="28027140" shape="256,128,2,2" size="524288"/>
+			<data element_type="f16" offset="14013572" shape="256,128,2,2" size="262144"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>256</dim>
 					<dim>128</dim>
 					<dim>2</dim>
@@ -1377,7 +1377,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>128</dim>
 					<dim>356</dim>
@@ -1402,7 +1402,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>256</dim>
 					<dim>356</dim>
@@ -1411,9 +1411,9 @@
 			</output>
 		</layer>
 		<layer id="83" name="onnx_initializer_node_conv7_1.weight/Output_0/Data__const" type="Const" version="opset1">
-			<data element_type="f32" offset="28551428" shape="128,256,3,3" size="1179648"/>
+			<data element_type="f16" offset="14275716" shape="128,256,3,3" size="589824"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>128</dim>
 					<dim>256</dim>
 					<dim>3</dim>
@@ -1438,7 +1438,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>128</dim>
 					<dim>356</dim>
@@ -1446,10 +1446,10 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="85" name="115/Dims1717/copy_const" type="Const" version="opset1">
-			<data element_type="f32" offset="29731076" shape="1,128,1,1" size="512"/>
+		<layer id="85" name="115/Dims1681/copy_const" type="Const" version="opset1">
+			<data element_type="f16" offset="14865540" shape="1,128,1,1" size="256"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>1</dim>
 					<dim>128</dim>
 					<dim>1</dim>
@@ -1473,7 +1473,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>128</dim>
 					<dim>356</dim>
@@ -1481,15 +1481,15 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="87" name="1163461/Cast_14392_const" type="Const" version="opset1">
-			<data element_type="f32" offset="4736" shape="1" size="4"/>
+		<layer id="87" name="1163429/Cast_14398_const" type="Const" version="opset1">
+			<data element_type="f32" offset="2368" shape="1" size="4"/>
 			<output>
 				<port id="1" precision="FP32">
 					<dim>1</dim>
 				</port>
 			</output>
 		</layer>
-		<layer id="88" name="1163461" type="PReLU" version="opset1">
+		<layer id="88" name="1163429" type="PReLU" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -1502,7 +1502,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>128</dim>
 					<dim>356</dim>
@@ -1511,9 +1511,9 @@
 			</output>
 		</layer>
 		<layer id="89" name="onnx_initializer_node_conv7_2.weight/Output_0/Data__const" type="Const" version="opset1">
-			<data element_type="f32" offset="29731588" shape="128,128,3,3" size="589824"/>
+			<data element_type="f16" offset="14865796" shape="128,128,3,3" size="294912"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>128</dim>
 					<dim>128</dim>
 					<dim>3</dim>
@@ -1538,7 +1538,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>128</dim>
 					<dim>356</dim>
@@ -1546,10 +1546,10 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="91" name="117/Dims1669/copy_const" type="Const" version="opset1">
-			<data element_type="f32" offset="30321412" shape="1,128,1,1" size="512"/>
+		<layer id="91" name="117/Dims1723/copy_const" type="Const" version="opset1">
+			<data element_type="f16" offset="15160708" shape="1,128,1,1" size="256"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>1</dim>
 					<dim>128</dim>
 					<dim>1</dim>
@@ -1573,7 +1573,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>128</dim>
 					<dim>356</dim>
@@ -1581,15 +1581,15 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="93" name="1183453/Cast_14408_const" type="Const" version="opset1">
-			<data element_type="f32" offset="4736" shape="1" size="4"/>
+		<layer id="93" name="1183425/Cast_14404_const" type="Const" version="opset1">
+			<data element_type="f32" offset="2368" shape="1" size="4"/>
 			<output>
 				<port id="1" precision="FP32">
 					<dim>1</dim>
 				</port>
 			</output>
 		</layer>
-		<layer id="94" name="1183453" type="PReLU" version="opset1">
+		<layer id="94" name="1183425" type="PReLU" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -1602,7 +1602,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>128</dim>
 					<dim>356</dim>
@@ -1611,9 +1611,9 @@
 			</output>
 		</layer>
 		<layer id="95" name="onnx_initializer_node_up8.weight/Output_0/Data__const" type="Const" version="opset1">
-			<data element_type="f32" offset="30321924" shape="128,64,2,2" size="131072"/>
+			<data element_type="f16" offset="15160964" shape="128,64,2,2" size="65536"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>128</dim>
 					<dim>64</dim>
 					<dim>2</dim>
@@ -1638,7 +1638,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>64</dim>
 					<dim>712</dim>
@@ -1663,7 +1663,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>128</dim>
 					<dim>712</dim>
@@ -1672,9 +1672,9 @@
 			</output>
 		</layer>
 		<layer id="98" name="onnx_initializer_node_conv8_1.weight/Output_0/Data__const" type="Const" version="opset1">
-			<data element_type="f32" offset="30452996" shape="64,128,3,3" size="294912"/>
+			<data element_type="f16" offset="15226500" shape="64,128,3,3" size="147456"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>64</dim>
 					<dim>128</dim>
 					<dim>3</dim>
@@ -1699,7 +1699,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>64</dim>
 					<dim>712</dim>
@@ -1707,10 +1707,10 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="100" name="141/Dims1699/copy_const" type="Const" version="opset1">
-			<data element_type="f32" offset="30747908" shape="1,64,1,1" size="256"/>
+		<layer id="100" name="141/Dims1657/copy_const" type="Const" version="opset1">
+			<data element_type="f16" offset="15373956" shape="1,64,1,1" size="128"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>1</dim>
 					<dim>64</dim>
 					<dim>1</dim>
@@ -1734,7 +1734,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>64</dim>
 					<dim>712</dim>
@@ -1742,15 +1742,15 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="102" name="1423449/Cast_14402_const" type="Const" version="opset1">
-			<data element_type="f32" offset="4736" shape="1" size="4"/>
+		<layer id="102" name="1423433/Cast_14426_const" type="Const" version="opset1">
+			<data element_type="f32" offset="2368" shape="1" size="4"/>
 			<output>
 				<port id="1" precision="FP32">
 					<dim>1</dim>
 				</port>
 			</output>
 		</layer>
-		<layer id="103" name="1423449" type="PReLU" version="opset1">
+		<layer id="103" name="1423433" type="PReLU" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -1763,7 +1763,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>64</dim>
 					<dim>712</dim>
@@ -1772,9 +1772,9 @@
 			</output>
 		</layer>
 		<layer id="104" name="onnx_initializer_node_conv8_2.weight/Output_0/Data__const" type="Const" version="opset1">
-			<data element_type="f32" offset="30748164" shape="64,64,3,3" size="147456"/>
+			<data element_type="f16" offset="15374084" shape="64,64,3,3" size="73728"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>64</dim>
 					<dim>64</dim>
 					<dim>3</dim>
@@ -1799,7 +1799,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>64</dim>
 					<dim>712</dim>
@@ -1807,10 +1807,10 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="106" name="143/Dims1759/copy_const" type="Const" version="opset1">
-			<data element_type="f32" offset="30895620" shape="1,64,1,1" size="256"/>
+		<layer id="106" name="143/Dims1747/copy_const" type="Const" version="opset1">
+			<data element_type="f16" offset="15447812" shape="1,64,1,1" size="128"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>1</dim>
 					<dim>64</dim>
 					<dim>1</dim>
@@ -1834,7 +1834,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>64</dim>
 					<dim>712</dim>
@@ -1842,15 +1842,15 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="108" name="1443481/Cast_14404_const" type="Const" version="opset1">
-			<data element_type="f32" offset="4736" shape="1" size="4"/>
+		<layer id="108" name="1443477/Cast_14410_const" type="Const" version="opset1">
+			<data element_type="f32" offset="2368" shape="1" size="4"/>
 			<output>
 				<port id="1" precision="FP32">
 					<dim>1</dim>
 				</port>
 			</output>
 		</layer>
-		<layer id="109" name="1443481" type="PReLU" version="opset1">
+		<layer id="109" name="1443477" type="PReLU" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -1863,7 +1863,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>64</dim>
 					<dim>712</dim>
@@ -1872,9 +1872,9 @@
 			</output>
 		</layer>
 		<layer id="110" name="onnx_initializer_node_up9.weight/Output_0/Data__const" type="Const" version="opset1">
-			<data element_type="f32" offset="30895876" shape="64,32,2,2" size="32768"/>
+			<data element_type="f16" offset="15447940" shape="64,32,2,2" size="16384"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>64</dim>
 					<dim>32</dim>
 					<dim>2</dim>
@@ -1899,7 +1899,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>32</dim>
 					<dim>1424</dim>
@@ -1924,7 +1924,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>64</dim>
 					<dim>1424</dim>
@@ -1933,9 +1933,9 @@
 			</output>
 		</layer>
 		<layer id="113" name="onnx_initializer_node_conv9_1.weight/Output_0/Data__const" type="Const" version="opset1">
-			<data element_type="f32" offset="30928644" shape="32,64,3,3" size="73728"/>
+			<data element_type="f16" offset="15464324" shape="32,64,3,3" size="36864"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>32</dim>
 					<dim>64</dim>
 					<dim>3</dim>
@@ -1960,7 +1960,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>32</dim>
 					<dim>1424</dim>
@@ -1968,10 +1968,10 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="115" name="167/Dims1705/copy_const" type="Const" version="opset1">
-			<data element_type="f32" offset="31002372" shape="1,32,1,1" size="128"/>
+		<layer id="115" name="167/Dims1693/copy_const" type="Const" version="opset1">
+			<data element_type="f16" offset="15501188" shape="1,32,1,1" size="64"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>1</dim>
 					<dim>32</dim>
 					<dim>1</dim>
@@ -1995,7 +1995,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>32</dim>
 					<dim>1424</dim>
@@ -2003,15 +2003,15 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="117" name="1683445/Cast_14418_const" type="Const" version="opset1">
-			<data element_type="f32" offset="4736" shape="1" size="4"/>
+		<layer id="117" name="1683481/Cast_14386_const" type="Const" version="opset1">
+			<data element_type="f32" offset="2368" shape="1" size="4"/>
 			<output>
 				<port id="1" precision="FP32">
 					<dim>1</dim>
 				</port>
 			</output>
 		</layer>
-		<layer id="118" name="1683445" type="PReLU" version="opset1">
+		<layer id="118" name="1683481" type="PReLU" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -2024,7 +2024,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>32</dim>
 					<dim>1424</dim>
@@ -2033,9 +2033,9 @@
 			</output>
 		</layer>
 		<layer id="119" name="onnx_initializer_node_conv9_2.weight/Output_0/Data__const" type="Const" version="opset1">
-			<data element_type="f32" offset="31002500" shape="32,32,3,3" size="36864"/>
+			<data element_type="f16" offset="15501252" shape="32,32,3,3" size="18432"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>32</dim>
 					<dim>32</dim>
 					<dim>3</dim>
@@ -2060,7 +2060,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>32</dim>
 					<dim>1424</dim>
@@ -2068,10 +2068,10 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="121" name="169/Dims1663/copy_const" type="Const" version="opset1">
-			<data element_type="f32" offset="31039364" shape="1,32,1,1" size="128"/>
+		<layer id="121" name="169/Dims1675/copy_const" type="Const" version="opset1">
+			<data element_type="f16" offset="15519684" shape="1,32,1,1" size="64"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>1</dim>
 					<dim>32</dim>
 					<dim>1</dim>
@@ -2095,7 +2095,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>32</dim>
 					<dim>1424</dim>
@@ -2103,8 +2103,8 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="123" name="1703417/Cast_14386_const" type="Const" version="opset1">
-			<data element_type="f32" offset="4736" shape="1" size="4"/>
+		<layer id="123" name="1703417/Cast_14406_const" type="Const" version="opset1">
+			<data element_type="f32" offset="2368" shape="1" size="4"/>
 			<output>
 				<port id="1" precision="FP32">
 					<dim>1</dim>
@@ -2124,7 +2124,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>32</dim>
 					<dim>1424</dim>
@@ -2133,9 +2133,9 @@
 			</output>
 		</layer>
 		<layer id="125" name="onnx_initializer_node_conv10.weight/Output_0/Data__const" type="Const" version="opset1">
-			<data element_type="f32" offset="31039492" shape="12,32,1,1" size="1536"/>
+			<data element_type="f16" offset="15519748" shape="12,32,1,1" size="768"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>12</dim>
 					<dim>32</dim>
 					<dim>1</dim>
@@ -2160,7 +2160,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>12</dim>
 					<dim>1424</dim>
@@ -2168,10 +2168,10 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="127" name="171/Dims1711/copy_const" type="Const" version="opset1">
-			<data element_type="f32" offset="31041028" shape="1,12,1,1" size="48"/>
+		<layer id="127" name="171/Dims1759/copy_const" type="Const" version="opset1">
+			<data element_type="f16" offset="15520516" shape="1,12,1,1" size="24"/>
 			<output>
-				<port id="1" precision="FP32">
+				<port id="1" precision="FP16">
 					<dim>1</dim>
 					<dim>12</dim>
 					<dim>1</dim>
@@ -2195,7 +2195,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>12</dim>
 					<dim>1424</dim>
@@ -2203,8 +2203,8 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="129" name="199/Cast_14422_const" type="Const" version="opset1">
-			<data element_type="i64" offset="31041076" shape="6" size="48"/>
+		<layer id="129" name="199/Cast_14418_const" type="Const" version="opset1">
+			<data element_type="i64" offset="15520540" shape="6" size="48"/>
 			<output>
 				<port id="1" precision="I64">
 					<dim>6</dim>
@@ -2225,7 +2225,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>2</dim>
 					<dim>2</dim>
@@ -2235,8 +2235,8 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="131" name="200/Cast_14388_const" type="Const" version="opset1">
-			<data element_type="i64" offset="31041124" shape="6" size="48"/>
+		<layer id="131" name="200/Cast_14396_const" type="Const" version="opset1">
+			<data element_type="i64" offset="15520588" shape="6" size="48"/>
 			<output>
 				<port id="1" precision="I64">
 					<dim>6</dim>
@@ -2258,7 +2258,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>1424</dim>
 					<dim>2</dim>
@@ -2268,8 +2268,8 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="133" name="206/Cast_14390_const" type="Const" version="opset1">
-			<data element_type="i64" offset="31041172" shape="4" size="32"/>
+		<layer id="133" name="206/Cast_14422_const" type="Const" version="opset1">
+			<data element_type="i64" offset="15520636" shape="4" size="32"/>
 			<output>
 				<port id="1" precision="I64">
 					<dim>4</dim>
@@ -2292,7 +2292,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>2848</dim>
 					<dim>4256</dim>
@@ -2300,8 +2300,8 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="135" name="out/Cast_14426_const" type="Const" version="opset1">
-			<data element_type="i64" offset="31041204" shape="4" size="32"/>
+		<layer id="135" name="out/Cast_14412_const" type="Const" version="opset1">
+			<data element_type="i64" offset="15520668" shape="4" size="32"/>
 			<output>
 				<port id="1" precision="I64">
 					<dim>4</dim>
@@ -2321,7 +2321,7 @@
 				</port>
 			</input>
 			<output>
-				<port id="2" precision="FP32">
+				<port id="2" precision="FP16">
 					<dim>1</dim>
 					<dim>3</dim>
 					<dim>2848</dim>
@@ -2488,7 +2488,7 @@
 		<cli_parameters>
 			<blobs_as_inputs value="True"/>
 			<caffe_parser_path value="DIR"/>
-			<data_type value="float"/>
+			<data_type value="FP16"/>
 			<disable_nhwc_to_nchw value="False"/>
 			<disable_omitting_optional value="False"/>
 			<disable_resnet_optimization value="False"/>
